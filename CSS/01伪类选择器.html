@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* nth-child()
+           last-child
+           在所有的子元素中开始选 
+        */
+        ul>li:first-child{
+            color:red;   
+            /* 
+                对li不起作用
+                ul的第一个子元素是span，所以匹配不到li
+            */
+        }
+
+        /* :first-of-type
+        :last-of-type
+        :nth-of-type()
+        在同类元素中进行排序 */
+       
+        ul>li:first-of-type{  /* 对li起作用 */
+            color:green;
+            font-weight: 900;
+        }
+
+        /* 
+            否定伪类
+            
+        */
+        ul>li:not(:nth-child(2)){
+        /* ul>li:not(:nth-of-type(2)){ */
+           color:blue;     
+        }
+
+
+    </style>
+</head>
+<body>
+    
+    <ul>
+        <span>我是一个span</span>
+        <li>第0个</li>
+        <li>第1个</li>
+        <li>第2个</li>
+        <li>第3个</li>
+    </ul>
+</body>
+</html>
